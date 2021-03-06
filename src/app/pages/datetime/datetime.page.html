@@ -1,0 +1,53 @@
+<app-header titulo="Datetime"></app-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Datos de nacimiento</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Fecha de nacimiento</ion-label>
+      <ion-datetime [value]="fechaNaci.toISOString()" displayFormat="YYYY, MMMM, DDD" (ionChange)="cambioFecha($event)">
+      </ion-datetime>
+    </ion-item>
+
+    <ion-list-header>
+      <ion-label>Restricciones</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Min y Max</ion-label>
+      <ion-datetime displayFormat="YYYY, MMMM, DDD" min="1990-01-01" max="2030-12-31"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Años</ion-label>
+      <ion-datetime displayFormat="YYYY" min="1990" max="2030"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Custom options</ion-label>
+      <ion-datetime [pickerOptions]="customPickerOptions" [yearValues]="customYearValues"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label slot="start">Ng model</ion-label>
+      <!-- Default Input -->
+      <ion-input type="text" [(ngModel)]="texto" placeholder="introduce tu texto aqui"></ion-input>
+      
+    </ion-item>
+
+    <ion-item>
+      <p>{{texto}}</p>
+    </ion-item>
+
+    
+      <ion-button color="primary" (click)="mayuscula()">Mayuscula</ion-button>
+      <ion-button color="secondary" (click)="minuscula()">Minuscula</ion-button>
+  
+
+  </ion-list>
+
+</ion-content>
