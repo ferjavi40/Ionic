@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+import { MontyInterface } from '../interfaces/monty-interface';
+
+
 
 
 @Injectable({
@@ -12,8 +17,8 @@ export class MortyDataService {
 
   constructor( private http:HttpClient) { }
 
-  getCharater(id:number) {
-    return this.http.get(`${this.api}/character/${id}`);
+  getCharater(id:number):Observable<MontyInterface> {
+    return this.http.get<MontyInterface>(`${this.api}/character/${id}`);
   }
 
 

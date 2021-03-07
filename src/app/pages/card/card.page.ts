@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MortyDataService } from '../../services/morty-data.service';
+import { Subscription } from 'rxjs';
+
 
 import { MontyInterface } from '../../interfaces/monty-interface';
 
@@ -10,19 +12,22 @@ import { MontyInterface } from '../../interfaces/monty-interface';
   templateUrl: './card.page.html',
   styleUrls: ['./card.page.scss'],
 })
-export class CardPage implements OnInit {
+export class CardPage implements OnInit , OnDestroy {
   
-  character:MontyInterface[] = [];
+  public character:MontyInterface= null;
+  private character$$: Subscription = null;
 
-  constructor(private _mortyService: MortyDataService) {
-    this._mortyService.getCharater(2)
-          .subscribe((resp:MontyInterface[])=>{
-            this.character=resp;
-            console.log(this.character);
-          });
-  }
+  constructor(private _mortyService: MortyDataService) {}
 
   ngOnInit() {
+    this.character$$= this._mortyService.getCharater(2)
+        .subscribe(data=>{
+          this.character = data;
+        })
+  }
+
+  ngOnDestroy(): void {
+    if(this.character$$) this.character$$.unsubscribe()
   }
 
 }
