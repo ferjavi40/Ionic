@@ -58,6 +58,11 @@ export class InicioPage implements OnInit {
       icon: 'grid-outline',
       name: 'Grid System',
       redirectTo: '/grid'
+    },
+    {
+      icon: 'grid-outline',
+      name: 'Lista de personajes',
+      redirectTo: '/character-list'
     }
 
 

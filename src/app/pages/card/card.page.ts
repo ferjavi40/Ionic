@@ -23,7 +23,7 @@ export class CardPage implements OnInit , OnDestroy {
     this.character$$= this._mortyService.getCharater(2)
         .subscribe(data=>{
           this.character = data;
-        })
+        });
   }
 
   ngOnDestroy(): void {
