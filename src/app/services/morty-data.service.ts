@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 
 import { MontyInterface } from '../interfaces/monty-interface';
 import { AllCharactersInterface } from '../interfaces/all-characters';
@@ -24,8 +26,9 @@ export class MortyDataService {
   }
 
 
-  getAllCharacter(): Observable <AllCharactersInterface[]> {
-    return this.http.get<AllCharactersInterface[]>(`${this.api}/character`);
+  getAllCharacter(): Observable <MontyInterface[]> {
+    return this.http.get<AllCharactersInterface>(`${this.api}/character`)
+    .pipe(map(resp=> resp.results));
   }
 
 

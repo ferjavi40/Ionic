@@ -22,8 +22,7 @@ export class CharacterListPage implements OnInit, OnDestroy {
   ngOnInit() {
     this.personajes$= this._mortyService.getAllCharacter()
           .subscribe((personajes)=>{
-            this.personajes= personajes;
-            console.log(this.personajes)
+            console.log(personajes);
           });
 
   }
