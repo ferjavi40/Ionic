@@ -2,7 +2,8 @@ import { Component, OnInit,OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { MortyDataService } from '../../services/morty-data.service';
-import { MontyInterface } from '../../interfaces/monty-interface';
+import { AllCharactersInterface } from '../../interfaces/all-characters';
+
 
 
 
@@ -13,7 +14,7 @@ import { MontyInterface } from '../../interfaces/monty-interface';
 })
 export class CharacterListPage implements OnInit, OnDestroy {
 
-  public personajes: MontyInterface [] = [];
+  public personajes: AllCharactersInterface [] = [];
   private personajes$: Subscription= null;
 
   constructor( private _mortyService: MortyDataService) { }
