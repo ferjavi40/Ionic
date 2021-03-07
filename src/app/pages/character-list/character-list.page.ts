@@ -13,15 +13,15 @@ import { MontyInterface } from '../../interfaces/monty-interface';
 })
 export class CharacterListPage implements OnInit, OnDestroy {
 
-  public personajes: MontyInterface = null;
+  public personajes: MontyInterface [] = [];
   private personajes$: Subscription= null;
 
   constructor( private _mortyService: MortyDataService) { }
 
   ngOnInit() {
     this.personajes$= this._mortyService.getAllCharacter()
-          .subscribe(data=>{
-            this.personajes= data;
+          .subscribe((personajes)=>{
+            this.personajes= personajes;
             console.log(this.personajes)
           });
 

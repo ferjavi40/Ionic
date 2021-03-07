@@ -22,8 +22,8 @@ export class MortyDataService {
   }
 
 
-  getAllCharacter(): Observable <MontyInterface> {
-    return this.http.get<MontyInterface>(`${this.api}/character`);
+  getAllCharacter(): Observable <MontyInterface[]> {
+    return this.http.get<MontyInterface[]>(`${this.api}/character`);
   }
 
 
