@@ -63,6 +63,11 @@ export class InicioPage implements OnInit {
       icon: 'grid-outline',
       name: 'Lista de personajes',
       redirectTo: '/character-list'
+    },
+    {
+      icon: 'disc-outline',
+      name: 'Scroll infinito',
+      redirectTo: '/infiniteve-scroll'
     }
 
 

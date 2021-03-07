@@ -50,6 +50,10 @@ const routes: Routes = [
   {
     path: 'character-list',
     loadChildren: () => import('./pages/character-list/character-list.module').then( m => m.CharacterListPageModule)
+  },
+  {
+    path: 'infiniteve-scroll',
+    loadChildren: () => import('./pages/infiniteve-scroll/infiniteve-scroll.module').then( m => m.InfiniteveScrollPageModule)
   }
 ];
 
