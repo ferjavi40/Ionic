@@ -1,0 +1,67 @@
+<app-header titulo="Fab button"></app-header>
+
+<ion-content>
+
+  <ion-content>
+    <!-- fab placed to the top end -->
+    <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab> -->
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-fab-button>
+
+      <ion-fab-list side="top">
+        <ion-fab-button>
+          <ion-icon name="logo-facebook"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button>
+          <ion-icon name="logo-github"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button>
+          <ion-icon name="logo-youtube"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button (click)="onclick4()">
+          <ion-icon name="logo-xbox"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+
+      <ion-fab-list side="start">
+        <ion-fab-button>
+          <ion-icon name="logo-vimeo"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button>
+          <ion-icon name="logo-google"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button color="success">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button (click)="onclick4()">
+          <ion-icon name="logo-xbox"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+
+    </ion-fab>
+
+
+
+
+
+
+    <ion-list>
+      <ion-item *ngFor="let item of data; index as i">
+        <ion-label>Item: {{i+1}} {{item}}</ion-label>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title>Footer</ion-title>
+    </ion-toolbar>
+  </ion-footer>

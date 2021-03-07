@@ -48,7 +48,13 @@ export class InicioPage implements OnInit {
       icon: 'alarm-outline',
       name: 'Datetime',
       redirectTo: '/datetime'
+    },
+    {
+      icon: 'server-outline',
+      name: 'Fab',
+      redirectTo: '/fab'
     }
+
 
   ];
 
