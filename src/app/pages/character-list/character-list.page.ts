@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 
 import { MortyDataService } from '../../services/morty-data.service';
 import { AllCharactersInterface } from '../../interfaces/all-characters';
+import { MontyInterface } from '../../interfaces/monty-interface';
+
 
 
 
@@ -14,7 +16,7 @@ import { AllCharactersInterface } from '../../interfaces/all-characters';
 })
 export class CharacterListPage implements OnInit, OnDestroy {
 
-  public personajes: AllCharactersInterface [] = [];
+  public personajes: MontyInterface []  = [];
   private personajes$: Subscription= null;
 
   constructor( private _mortyService: MortyDataService) { }
@@ -23,6 +25,7 @@ export class CharacterListPage implements OnInit, OnDestroy {
     this.personajes$= this._mortyService.getAllCharacter()
           .subscribe((personajes)=>{
             console.log(personajes);
+            this.personajes=personajes;
           });
 
   }
