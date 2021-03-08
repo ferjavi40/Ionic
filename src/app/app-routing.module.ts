@@ -54,6 +54,10 @@ const routes: Routes = [
   {
     path: 'infiniteve-scroll',
     loadChildren: () => import('./pages/infiniteve-scroll/infiniteve-scroll.module').then( m => m.InfiniteveScrollPageModule)
+  },
+  {
+    path: 'inputs',
+    loadChildren: () => import('./pages/inputs/inputs.module').then( m => m.InputsPageModule)
   }
 ];
 

@@ -68,7 +68,13 @@ export class InicioPage implements OnInit {
       icon: 'disc-outline',
       name: 'Scroll infinito',
       redirectTo: '/infiniteve-scroll'
+    },
+    {
+      icon: 'list-outline',
+      name: 'Inputs',
+      redirectTo: '/inputs'
     }
+
 
 
   ];
