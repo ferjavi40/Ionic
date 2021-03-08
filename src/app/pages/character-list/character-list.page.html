@@ -5,7 +5,7 @@
     <ion-grid fixed="true">
         <ion-row>
             <ion-col *ngFor="let item of personajes" size="12" size-lg="3" size-md="4" size-sm="6">
-                <ion-card >
+                <ion-card>
                     <ion-img [src]="item.image"></ion-img>
                     <ion-card-header>
                         <ion-card-subtitle>{{item.created|date}}</ion-card-subtitle>
@@ -19,6 +19,7 @@
             </ion-col>
         </ion-row>
     </ion-grid>
+
 
     <ion-footer>
         <ion-toolbar>
